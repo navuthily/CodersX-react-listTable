@@ -9,7 +9,7 @@ const tablelist = [
     id: 1,
     company: "Home",
     contact: "fa-home",
-    country:"Vietnam"
+    country:"Vietnam",
   },
   {
     id: 2,
@@ -36,6 +36,9 @@ const tablelist = [
     country:"Vietnam"
   },
 ];
+const notifi=[
+  {  display:false}
+]
 class App extends Component {
   showTableList = () => {
     let result = null;
@@ -45,6 +48,14 @@ class App extends Component {
     });
     return result;
   };
+  showNotification =()=>{
+    var className='';
+    if(notifi.display!==false){
+      className +='notifi';
+    }
+   
+    return className;
+  }
   render() {
     return (
     <div>
@@ -57,6 +68,10 @@ class App extends Component {
        {this.showTableList()}
        
       </table>  
+
+      <div className={this.showNotification()}></div>
+      <i className="fa fa-bell"></i>
+     
     </div>
      
     );

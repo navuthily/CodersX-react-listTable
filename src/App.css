@@ -24,3 +24,16 @@ td, th {
 tr:nth-child(even) {
   background-color: #dddddd;
 }
+.notifi{
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  border-radius: 50%;
+  position: relative;
+  left: 35px;
+  top: 5px;
+}
+.fa-bell{
+font-size: 40px !important;
+width: 50px;
+}
