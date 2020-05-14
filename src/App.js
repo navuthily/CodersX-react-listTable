@@ -1,26 +1,68 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "font-awesome/css/font-awesome.min.css";
+import Tablelist from './components/Tablelist';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const tablelist = [
+  {
+    id: 1,
+    company: "Home",
+    contact: "fa-home",
+    country:"Vietnam"
+  },
+  {
+    id: 2,
+    company: "Home",
+    contact: "fa-home",
+    country:"Vietnam"
+  },
+  {
+    id: 3,
+    company: "Home",
+    contact: "fa-home",
+    country:"Vietnam"
+  },
+  {
+    id: 4,
+    company: "Home",
+    contact: "fa-home",
+    country:"Vietnam"
+  },
+  {
+    id: 5,
+    company: "Home",
+    contact: "fa-home",
+    country:"Vietnam"
+  },
+];
+class App extends Component {
+  showTableList = () => {
+    let result = null;
+
+    result = tablelist.map((item, index) => {
+      return <Tablelist key={item.id} company={item.company} contact={item.contact} country={item.country} />;
+    });
+    return result;
+  };
+  render() {
+    return (
+      <div>
+        <h2>HTML Table</h2>
+
+      <table>
+       <tr>
+        <th>Company</th>
+        <th>Contact</th>
+        <th>Country</th>
+       </tr>
+       <tr>
+       {this.showTableList()}
+       </tr>
+      </table>
+      </div>
+    );
+  }
 }
 
 export default App;
