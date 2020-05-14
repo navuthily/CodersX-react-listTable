@@ -47,20 +47,18 @@ class App extends Component {
   };
   render() {
     return (
-      <div>
-        <h2>HTML Table</h2>
-
+    <div>
       <table>
        <tr>
         <th>Company</th>
         <th>Contact</th>
         <th>Country</th>
        </tr>
-       <tr>
        {this.showTableList()}
-       </tr>
-      </table>
-      </div>
+       
+      </table>  
+    </div>
+     
     );
   }
 }
